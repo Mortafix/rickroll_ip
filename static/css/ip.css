@@ -1,0 +1,31 @@
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    margin: 1rem;
+}
+
+.line img {
+    width: 7rem;
+    margin-bottom: -2rem;
+}
+
+.line {
+    font-size: 4rem;
+    color: #FFF;
+}
+
+.line.advice {
+    font-style: italic;
+    color: #FFFFFF69;
+}
+
+.line span {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+iframe {
+    margin: 0 auto;
+}
