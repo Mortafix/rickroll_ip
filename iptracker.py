@@ -22,7 +22,7 @@ templates = Jinja2Templates(directory="static/templates")
 
 def https_url_for(request: Request, name, **path_params):
     http_url = request.url_for(name, **path_params)
-    return http_url.replace("http", "http", 1)
+    return http_url.replace("http", "https", 1)
 
 
 def get_location(ip_address):
