@@ -51,16 +51,13 @@ def ip_page(request: Request):
         loc = location or "unknown"
         params = {
             "chat_id": settings.telegram.chat,
-            "text": f"📱 *{device}* ({os}) on *{browser}*\n⚙️ `{ip}`\n📍 _{loc}_",
+            "text": f"📱 *{device}* ([{os}]) on *{browser}*\n⚙️ `{ip}`\n📍 _{loc}_",
             "parse_mode": "Markdown",
         }
         try:
-            get(
-                f"https://api.telegram.org/bot{settings.telegram.token}/sendMessage",
-                params=params,
-            )
-        except Exception as e:
-            raise e
+            url = f"https://api.telegram.org/bot{settings.telegram.token}/sendMessage"
+            get(url, params=params)
+        except Exception:
             print("Ops! Something went wrong with Telegram logging")
     return templates.TemplateResponse(
         "ip.html",
